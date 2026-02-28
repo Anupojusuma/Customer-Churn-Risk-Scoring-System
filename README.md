@@ -65,8 +65,6 @@ Instead of randomly targeting customers, this system:
 
 ## 📂 Project Structure
 Customer_churn_prediction/
-│___ app/
-|
 ├── data/
 │ └── raw/
 │ └── dataset2_v2.xlsx
