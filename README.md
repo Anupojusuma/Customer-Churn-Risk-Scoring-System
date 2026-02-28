@@ -1,6 +1,6 @@
-# 📊 Customer Churn Risk Scoring System
+#  Customer Churn Risk Scoring System
 
-## 🔎 Project Overview
+##  Project Overview
 
 This project builds an end-to-end Machine Learning system to predict customer churn using demographic, service usage, and billing data. 
 
@@ -8,7 +8,7 @@ The system identifies high-risk customers and assigns churn probability scores t
 
 ---
 
-## 🎯 Business Problem
+##  Business Problem
 
 Customer churn directly impacts revenue in subscription-based businesses. 
 
@@ -19,7 +19,7 @@ Instead of randomly targeting customers, this system:
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - Python
 - Pandas
@@ -30,10 +30,10 @@ Instead of randomly targeting customers, this system:
 
 ---
 
-## 📂 Project Structure
-# 📊 Customer Churn Risk Scoring System
+##  Project Structure
+#  Customer Churn Risk Scoring System
 
-## 🔎 Project Overview
+##  Project Overview
 
 This project builds an end-to-end Machine Learning system to predict customer churn using demographic, service usage, and billing data. 
 
@@ -41,7 +41,7 @@ The system identifies high-risk customers and assigns churn probability scores t
 
 ---
 
-## 🎯 Business Problem
+##  Business Problem
 
 Customer churn directly impacts revenue in subscription-based businesses. 
 
@@ -52,7 +52,7 @@ Instead of randomly targeting customers, this system:
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - Python
 - Pandas
@@ -63,7 +63,7 @@ Instead of randomly targeting customers, this system:
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 Customer_churn_prediction/
 ├── data/
 │ └── raw/
@@ -84,7 +84,7 @@ Customer_churn_prediction/
 
 ---
 
-## ⚙️ Model Development
+##  Model Development
 
 ### Data Processing
 - Handled missing values
@@ -106,7 +106,7 @@ Logistic Regression achieved higher ROC-AUC and was selected as the final produc
 
 ---
 
-## 🚀 Batch Risk Scoring
+##  Batch Risk Scoring
 
 The `score.py` script:
 - Loads the trained model (.pkl)
@@ -117,7 +117,7 @@ The `score.py` script:
 
 ---
 
-## 🖥️ Streamlit Dashboard
+##  Streamlit Dashboard
 
 The project includes a simple dashboard built with Streamlit that allows:
 
@@ -132,7 +132,7 @@ streamlit run app.py
 
 ---
 
-## 📈 Risk Categorization
+##  Risk Categorization
 
 | Probability | Risk Level |
 |------------|------------|
@@ -142,7 +142,7 @@ streamlit run app.py
 
 ---
 
-## 💡 Key Learnings
+##  Key Learnings
 
 - End-to-end ML workflow (training → serialization → inference)
 - Model comparison & selection
