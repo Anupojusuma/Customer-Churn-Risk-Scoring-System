@@ -1,0 +1,31 @@
+feature,importance
+Contract_Month-to-month,0.2662751
+Internet Service_Fiber optic,0.0923183
+Tech Support_No,0.085452646
+Online Security_No,0.08166495
+Dependents_Yes,0.05473297
+Payment Method_Electronic check,0.046631996
+Dependents_No,0.03700156
+Contract_Two year,0.030589895
+Tenure Months,0.023683479
+Multiple Lines_Yes,0.018410522
+Paperless Billing_Yes,0.017211156
+Contract_One year,0.0167787
+Streaming Movies_Yes,0.016638402
+Paperless Billing_No,0.01600211
+Online Backup_No,0.0152067235
+Streaming TV_Yes,0.013554086
+Monthly Charges,0.012844101
+Internet Service_No,0.0126572475
+Multiple Lines_No,0.012497427
+Partner_Yes,0.012394251
+Total Charges,0.011994023
+Payment Method_Mailed check,0.011432076
+Streaming TV_No,0.010779962
+Streaming Movies_No,0.009124339
+Partner_No,0.008389265
+Gender_Male,0.0075938073
+Gender_Female,0.0066475356
+Online Backup_Yes,0.006563256
+Tech Support_Yes,0.0065472983
+CLTV,0.0062789163

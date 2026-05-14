@@ -1,52 +1,24 @@
-import pickle
-import pandas as pd
+from __future__ import annotations
 
-# Load saved model
-with open("../models/logistic_model.pkl", "rb") as f:
-    model = pickle.load(f)
+import sys
+from pathlib import Path
 
-# Load new dataset
-df = pd.read_excel("../data/raw/dataset2_v2.xlsx")
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
-# Remove target if exists
-if 'Churn Value' in df.columns:
-    df = df.drop(columns=['Churn Value'])
+from src.predict import save_prediction_report, score_customers
+from src.utils import DATA_PATH, DEFAULT_MODEL_PATH, REPORTS_DIR, read_customer_data, resolve_model_path
 
-# Drop same unused columns
-columns_to_drop = [
-    'CustomerID',
-    'Country',
-    'State',
-    'Count',
-    'Churn Label',
-    'Churn Reason',
-    'CLTV',
-    'Lat Long',
-    'City',
-    'Zip Code'
-]
-df['Total Charges'] = pd.to_numeric(df['Total Charges'], errors='coerce')
-df['Total Charges'] = df['Total Charges'].fillna(df['Total Charges'].median())
-df_features = df.drop(columns=columns_to_drop)
 
-# Predict probability
-df['Churn_Probability'] = model.predict_proba(df_features)[:, 1]
+def main() -> None:
+    df = read_customer_data(DATA_PATH)
+    scored = score_customers(df, model_path=resolve_model_path(DEFAULT_MODEL_PATH))
+    output_path = REPORTS_DIR / "churn_scored_customers.csv"
+    scored.to_csv(output_path, index=False)
+    save_prediction_report(scored, REPORTS_DIR / "prediction_report.csv")
+    print(f"Batch scoring completed. Saved scored data to {output_path}")
 
-# Save output
-df.to_csv("../reports/churn_scored_customers.csv", index=False)
 
-print("Batch scoring completed")
-
-def risk_level(p):
-    if p > 0.7:
-        return "High"
-    elif p > 0.4:
-        return "Medium"
-    else:
-        return "Low"
-
-df['Risk_Level'] = df['Churn_Probability'].apply(risk_level)
-
-df = df.sort_values(by='Churn_Probability', ascending=False)
-
-high_risk_df = df[df['Risk_Level'] == "High"]
+if __name__ == "__main__":
+    main()
